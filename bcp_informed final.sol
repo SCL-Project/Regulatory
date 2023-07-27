@@ -1,4 +1,3 @@
-//Jasmin
 /* BCP Parent Contract "BCP_informed.sol"
    Copyright (c) 2019-2020 Blockchain Presence
    To order data from Blockchain Presence: 
