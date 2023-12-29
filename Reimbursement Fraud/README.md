@@ -55,21 +55,21 @@ To interact with the `ReceiptTokenContract`, `ReceiptTokenRefundingContract`, `R
    - Click 'Deploy' to deploy each contract. 
    - After deployment, the contracts will appear in the 'Deployed Contracts' section at the bottom of the panel.
 
-#### 4.1 Order of Deployment
+#### 5 Order of Deployment
 Follow this sequence for deploying your contracts:
-  1. `ReceiptTokenContract`
-  2. `ReceiptTokenRefundingContract` (with the Contract Address of the ReceiptTokenContract)
+  1. `ReceiptToken`
+  2. `ReceiptTokenRefunding` (with the Contract Address of the ReceiptTokenContract)
   
-#### 4.2 Further Steps
+#### 6 Further Steps
 Complete the setup with the following actions:
-  1. Call the `registerCompany` function in the `ReceiptTokenContract` contract to register a company that participates in the system
-  1. Call the `registerRefundingContract` function in the `ReceiptTokenContract` contract to register a refunding contract that participates in the system
-  3. To create ReceiptTokens, the registered company has to call the `CreateReceiptToken` function in the ReceiptTokenContract. This will create the Receipt Token and send the NFT to the customer/employee
-  4. Call the `registerEmployee` function in the `ReceiptTokenRefundingContract` contract to register the employee
-  5. OPTIONAL: call the set...Restriction function in the in the `ReceiptTokenRefundingContract` contract to set restrictions for the registered employee
-  6. To do the refunding, the employee has to call the `refundToken` function in the `ReceiptTokenRefundingContract` contract with its token ID.
+  1. Call the `registerCompany` function in the `ReceiptToken` contract to register a company that participates in the system
+  1. Call the `registerRefundingContract` function in the `ReceiptToken` contract to register a refunding contract that participates in the system
+  3. To create ReceiptTokens, the registered company has to call the `createReceiptToken` function in the `ReceiptToken` contract. This will create the Receipt Token and send the NFT to the customer/employee
+  4. Call the `registerEmployee` function in the `ReceiptTokenRefunding` contract to register the employee
+  5. OPTIONAL: call the set...Restriction function in the in the `ReceiptTokenRefunding` contract to set restrictions for the registered employee
+  6. To do the refunding, the employee has to call the `refundToken` function in the `ReceiptTokenRefunding` contract with its token ID.
 
-### 5. Interact with the Contracts
+### 7. Interact with the Contracts
    - In the 'Deployed Contracts' section, you can interact with each contract's functions.
    - Use the provided fields and buttons to call functions of the contract, such as creating or refunding tokens.
 
