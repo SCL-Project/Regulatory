@@ -1,7 +1,7 @@
 # Regulation (Current Research)
 
 ## Prototype to mitigate Reimbursement Fraud when handing in expenses
-- **Scope:** Companies and Employers primarily in Switzerland
+- **Scope:** Companies primarily in Switzerland
 
 The objective of this prototype is to prevent or mitigate Reimbursement Fraud and to enhance the security and transparency for the reimbursement of expenses by using NFT's as Receipt tokens. 
 ## Overview
@@ -20,7 +20,7 @@ The objective of this prototype is to prevent or mitigate Reimbursement Fraud an
 - **@return:** documents the retunr variables of a contract's function
 
 ### Audience
-- **Companies**
+- **Companies** (especially companies with high reimbursement Fraud)
 - **Students & Researchers**
 
 ### Assumptions
@@ -60,16 +60,16 @@ Follow this sequence for deploying your contracts:
   1. `ReceiptTokenContract`
   2. `ReceiptTokenRefundingContract` (with the Contract Address of the ReceiptTokenContract)
   
-#### 4.3 Further Steps
+#### 4.2 Further Steps
 Complete the setup with the following actions:
-  1. Call the `SetTokenCredit` function in the `VATToken` contract of the seller's country, providing some tokens for the respective seller.
-  2. Sellers need to execute the `buyVATTokens` function to access tokens from the `TokenCredit`.
-  3. To create ReceiptTokens, sellers should use the `CreateReceiptToken` function. This will send VATTokens to the government and generate the ReceiptTokens.
+  1. Call the `registerCompany` function in the `ReceiptTokenContract` contract to register a company that participates in the system
+  1. Call the `registerRefundingContract` function in the `ReceiptTokenContract` contract to register a refunding contract that participates in the system
+  3. To create ReceiptTokens, the registered company has to call the `CreateReceiptToken` function in the ReceiptTokenContract. This will create the Receipt Token and send the NFT to the customer/employee
+  4. Call the `registerEmployee` function in the `ReceiptTokenRefundingContract` contract to register the employee
+  5. OPTIONAL: call the set...Restriction function in the in the `ReceiptTokenRefundingContract` contract to set restrictions for the registered employee
+  6. To do the refunding, the employee has to call the `refundToken` function in the `ReceiptTokenRefundingContract` contract with its token ID.
 
-### 6. Linking Contracts
-   - Since the 3 contracts need to interact with each other (e.g., `ReceiptTokenContract` needs the address of `VATTokenContract`), ensure you copy the deployed contract addresses and set them using the appropriate functions in the respective contracts.
-
-### 7. Interact with the Contracts
+### 5. Interact with the Contracts
    - In the 'Deployed Contracts' section, you can interact with each contract's functions.
    - Use the provided fields and buttons to call functions of the contract, such as creating or refunding tokens.
 
