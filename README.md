@@ -6,10 +6,10 @@
 The objective of this prototype is to prevent or mitigate Reimbursement Fraud and to enhance the security and transparency for the reimbursement of expenses by using NFT's as Receipt tokens. 
 ## Overview
 ### Smart Contracts
-#### [ReceiptTokenContract](Reimbursement Fraud/ReceiptTokenContract.sol): Creates ReceiptTokens for the clients / employees of the refunding company
-#### [ReceiptTokenRefundingContract](Reimbursement Fraud/ReceiptTokenRefundingContract.sol): Contract of the refunding company to refund the Receipt Tokens
-#### [RCTContractInterface](Reimbursement Fraud/RCTContractInterface.sol): Interface of the ReceiptTokenContract
-#### [ETHOracle](Reimbursement Fraud/ETHOracle.sol): Contract to similate an oracle for the exchange rate of CHF / ETH
+#### [ReceiptTokenContract](Reimbursement%20Fraud/ReceiptTokenContract.sol): Creates ReceiptTokens for the clients / employees of the refunding company
+#### [ReceiptTokenRefundingContract](Reimbursement%20Fraud/ReceiptTokenRefundingContract.sol): Contract of the refunding company to refund the Receipt Tokens
+#### [RCTContractInterface](Reimbursement%20Fraud/RCTContractInterface.sol): Interface of the ReceiptTokenContract
+#### [ETHOracle](Reimbursement%20Fraud/ETHOracle.sol): Contract to similate an oracle for the exchange rate of CHF / ETH
 
 ### NatSpec Format
 - **[Solidity Documention](https://docs.soliditylang.org/en/latest/natspec-format.html)**
