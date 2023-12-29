@@ -24,12 +24,9 @@ The objective of this prototype is to prevent or mitigate Reimbursement Fraud an
 - **Students & Researchers**
 
 ### Assumptions
-- Deployment on sepolia testnet (ethereum blockchain): Assumption of integrity of the blockchain data (in a real world adoption a private blockchain would be expedient)
-- Only 1 VAT rate per country
-- Government collaboration
-- Adoption by businesses
-- Scalability of the blockchain
-- No corrupt government entities
+- Deployment on polygon blockchain (because of the lower fees compared to ethereum): Assumption of integrity of the blockchain data
+- a large number of companies participating in this system
+- No collaboration between the Receipt Issuing Company and the Customer (otherwise the company could hand fraudulent Receipts to the Customer)
 
 ### Open Issues
 - To create a real Oracle for the exchange rate of CHF / ETH
