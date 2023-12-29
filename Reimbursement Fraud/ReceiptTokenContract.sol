@@ -189,7 +189,7 @@ contract ReceiptToken is ERC721, ERC721Burnable, Ownable {
     * @param _location The location of the company.
     * @param _type The type of the company (as an index referencing the CompanyTypes array).
     */
-    function RegisterCompany(address _company, string memory _name, string memory _location, uint8 _type) external onlyOwner {
+    function registerCompany(address _company, string memory _name, string memory _location, uint8 _type) external onlyOwner {
         Company memory newCompany = Company(true, _name, _location, CompanyTypes[_type]);
         companies[_company] = newCompany;
     }
@@ -198,7 +198,7 @@ contract ReceiptToken is ERC721, ERC721Burnable, Ownable {
     * @dev Removes a company from the registered companies list.
     * @param _company The address of the company to be removed.
     */
-    function RemoveCompany(address _company) external onlyOwner {
+    function removeCompany(address _company) external onlyOwner {
         delete companies[_company];
     }
 
@@ -216,7 +216,7 @@ contract ReceiptToken is ERC721, ERC721Burnable, Ownable {
     * @dev Removes a refunding contract from the registered contracts list.
     * @param _contractAddress The address of the refunding contract to be removed.
     */
-    function RemoveContract(address _contractAddress) external onlyOwner {
+    function removeContract(address _contractAddress) external onlyOwner {
         delete refundingContracts[_contractAddress];
     }
 
