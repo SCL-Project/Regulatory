@@ -49,7 +49,7 @@ To interact with the `ReceiptTokenContract`, `ReceiptTokenRefundingContract`, `R
 
 ### 4. Deploy the Contracts
    - Switch to the 'Deploy & Run Transactions' tab.
-   - Connect to your chosen Ethereum environment using the 'Environment' dropdown.
+   - Connect to your chosen Ethereum environment use the 'Injected Environment' dropdown. (Your metamask wallet must be connected to the Sepolia Network)
    - Select the contract you wish to deploy from the 'Contract' dropdown.
    - Enter any necessary constructor parameters
    - Click 'Deploy' to deploy each contract. 
@@ -58,14 +58,8 @@ To interact with the `ReceiptTokenContract`, `ReceiptTokenRefundingContract`, `R
 #### 4.1 Order of Deployment
 Follow this sequence for deploying your contracts:
   1. `ReceiptTokenContract`
-  2. `ReceiptTokenRefundingContract`
-  3. `CrossBorderContract`
+  2. `ReceiptTokenRefundingContract` (with the Contract Address of the ReceiptTokenContract)
   
-#### 4.2 Connecting the Deployed Contracts
-Establish connections between your contracts with these steps:
-  1. In the `VATToken_CH` & `VAToken_De` contract, call the `setCBCAddress` function using the address of the `CrossBorderContract`.
-  2. In the `ReceiptTokenContract`, invoke `setVAT_DE_Contract` & `setVAT_CH_Contract` functions with the corresponding contract addresses.
-
 #### 4.3 Further Steps
 Complete the setup with the following actions:
   1. Call the `SetTokenCredit` function in the `VATToken` contract of the seller's country, providing some tokens for the respective seller.
@@ -77,7 +71,7 @@ Complete the setup with the following actions:
 
 ### 7. Interact with the Contracts
    - In the 'Deployed Contracts' section, you can interact with each contract's functions.
-   - Use the provided fields and buttons to call functions of the contract, such as creating tokens, transferring tokens across the border or refund taxes.
+   - Use the provided fields and buttons to call functions of the contract, such as creating or refunding tokens.
 
 ### Contributions
 🌟 Your Contributions are valued in the Reimbursement Fraud Repository! 🌟  
