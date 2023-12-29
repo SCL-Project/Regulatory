@@ -55,12 +55,12 @@ To interact with the `ReceiptTokenContract`, `ReceiptTokenRefundingContract`, `R
    - Click 'Deploy' to deploy each contract. 
    - After deployment, the contracts will appear in the 'Deployed Contracts' section at the bottom of the panel.
 
-#### 5 Order of Deployment
+### 5. Order of Deployment
 Follow this sequence for deploying your contracts:
   1. `ReceiptToken`
   2. `ReceiptTokenRefunding` (with the Contract Address of the ReceiptTokenContract)
   
-#### 6 Further Steps
+### 6. Further Steps
 Complete the setup with the following actions:
   1. Call the `registerCompany` function in the `ReceiptToken` contract to register a company that participates in the system
   1. Call the `registerRefundingContract` function in the `ReceiptToken` contract to register a refunding contract that participates in the system
