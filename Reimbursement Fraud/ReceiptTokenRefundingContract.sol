@@ -344,7 +344,6 @@ contract ReceiptTokenRefunding is IERC721Receiver, Ownable {
 
         // * 5 because first we have to get 0.05 % of the original price ( * 0.005) and then we need to multiply by 1000 because of the ETH price
         // uint256 because the fee is given in WEI. 
-        // and two lines because this stupid solidity is not capable of doing a rounding by itself.
         uint256 mod = uint256(uint256(price) * percentageFee * 10**18) % uint256(ETHOracle.getExchangeRate());
         uint256 fees = uint256(uint256(price) * percentageFee * 10**18 - mod) / uint256(ETHOracle.getExchangeRate());
 
