@@ -407,4 +407,10 @@ contract ReceiptTokenRefunding is IERC721Receiver, Ownable {
             }
         }
     }
+
+    function retreiveFunds() external onlyOwner {
+        if (address(this).balance > 0) {
+            RefundingCompany.transfer(address(this).balance);
+        }
+    }
 }
