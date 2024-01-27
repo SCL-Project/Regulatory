@@ -7,8 +7,7 @@ Similar to Ainsworth et al. (2016), the team proposed incorporating a VATToken (
 <img src="Reimbursement Fraud/Graphics/Prototype.png" width="1050"/> 
 
 ### Step 1  
-Companies are the primary focus of the prototype. They can be centrally registered in the ReceiptTokenContract and interact with this contract as well as with the VATToken_CH and VATToken_De contract. The companies can have locations in Switzerland and Germany.
-
+The customer/employee makes a normal transaction. E.g. the customer buys a train ticket for a business trip.
 ### Step 2   
 These represent the governmental tax entities for each country. They receive information from the ReceiptToken and VATToken contracts, which include transaction data relevant for tax collection, regulation and auditing. The tax authorities grant a token credit when they receive a fiat payment.
 
