@@ -7,20 +7,22 @@ The Regulation Team is developing a prototype for a smart contract solution for 
 <img src="Reimbursement Fraud/Graphics/Prototype.png" width="1050"/> 
 
 ### Step 1  
-The customer/employee makes a normal transaction. E.g. the customer buys a train ticket for a business trip.
+The customer/employee makes a normal transaction. E.g. the customer buys a train ticket for a business trip. Additionally the customer/employee provides his wallet ID to receive the NFT afterwards.
+
 ### Step 2   
-These represent the governmental tax entities for each country. They receive information from the ReceiptToken and VATToken contracts, which include transaction data relevant for tax collection, regulation and auditing. The tax authorities grant a token credit when they receive a fiat payment.
+The company takes the data from the transaction (date, price, other information) and creates an NFT, a ReceiptToken with it. 
 
 ### Step 3
 The ReceiptToken is being sent to the Customer/Employee. This will be done automatically in the process of creating the ReceiptToken.
+
 ### Step 4
-The VATToken contracts are used to simplify the VAT payments and refunds using either the VAT_CH or the VAT_DE token to reduce the potential of fraud and streamline tax administration. The VAT payment in these contracts is also the basis to be able to create a Receipt Token in the ReceiptTokenContract. For accuracy in the calculation the contract accesses the VAT rates from the Oracle for refunds.
+The customer/employee sends the ReceiptToken to the refunding contract of his employer. 
 
 ### Step 5 
-The oracle contract simulates a real blockchain oracle by setting the VAT rates and ex-change rate for the two countries. These rates can only be changed by government entities.
+The refunding contract of the employer checks the ReceiptToken of the employee whether if it is valid or not. When the token is valid, it continues with Step 6. Otherwise an error message is being triggered and the refunding payment is not being released.
 
 ### Step 6   
-This contract plays a crucial role in managing cross-border transactions within the VAT system. The primary goal is to simplify the complex tax implications of cross-border commerce, ensuring compliance with different VAT rates and regulations. This contract is essential for reducing administrative burdens, mitigating VAT fraud, and fostering a more transparent international trade environment. The contract automatically calculates the VAT difference of Switzerland and Germany by calling the oracle for the VAT rates and either pays (Switzerland to Germany) the difference from the companies account or refunds (Germany to Switzerland) the difference to the companies account. 
+Finally, when the token has been accepted, the employee is being refunded. Additionally the initial company, the one that created the ReceiptToken and SCL as the solution provider are getting payed a small percentage of the ReceiptTokens price as a fee.
 
 ## Background
 The need to change the VAT system arises from its inherent inefficiencies and susceptibility to fraud, as its all-phase taxation structure leads to complex calculations and creates opportunities for a range of fraudulent activities. Moreover, in Switzerland, common evasion methods like smuggling, undervaluation, and misuse of tax rates, as reported by the Bundesamt für Zoll und Grenzsicherheit (BAZG), highlight the persistent challenges in VAT administration, underscoring the urgency for systemic reform.
