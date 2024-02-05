@@ -65,21 +65,6 @@ Finally, when the token has been accepted, the employee is being refunded. Addit
 - **Features**:
   - **Ownership and Permissions**: Uses Ownable and custom modifiers, ensuring operations are conducted only by authorized entities
 
-
-### [RCTContractInterface](Reimbursement%20Fraud/RCTContractInterface.sol)
-- **Purpose**:
-    The CrossBorderContract plays a crucial role in managing cross-border transactions within the VAT system. It is designed to automate and streamline the VAT adjustments for products and services that cross borders. The primary goal is to simplify the complex tax implications of cross-border commerce, ensuring compliance with different VAT rates and regulations. This contract is essential for reducing administrative burdens, mitigating VAT fraud, and fostering a more transparent international trade environment.
-- **Features**:
-  - **Multi-Government Accessibility**: Designed to be operated by multiple government entities (Switzerland & Germany, reflecting the collaborative nature of international trade.
-  - **Automated VAT Adjustment**: Calculates and settles tax differences based on varying VAT rates of countries involved in the transaction.
-  - **Ownership Verification**: Ensures that the caller of the function is the rightful owner of the token representing the product being exported.
-  - **Legal Export Check**: Verifies that the product can be legally exported and imported, adhering to international trade regulations.
-  - **VAT Rate Management**: Uses an Oracle allowing for dynamic tax calculations.
-  - **Forbidden Goods Handling**: Manages a list of goods that are forbidden from export or import, enhancing regulatory compliance.
-  - **Cross-Border Tax Settlements**: Adjusts VAT payments in accordance with the destination country's tax rate using the data of the Oracle, handling both tax credits and additional tax requirements.
-  - **Event Logging for Cross-Border Movements**: Records details of items crossing borders, including origin, destination, and token ID, for transparency and tracking.
-  - **Integration with VATToken and ReceiptTokenContract**: Works in conjunction with VATTokenContract for tax payments and ReceiptTokenContract for validating transaction details.
-
 ## Contributors
 - <a href="https://github.com/SamuelClauss" style="text-decoration: none; color: black;">Samuel Clauss</a>
 
