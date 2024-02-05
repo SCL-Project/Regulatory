@@ -31,6 +31,15 @@ Finally, when the token has been accepted, the employee is being refunded. Addit
 - **Features**:
   - **Ownership and Permissions**: Uses Ownable and custom modifiers, ensuring operations are conducted only by authorized entities
   - **Refunding and Company Structs**: Defines structured data for refunding contracts and registered companies.
+  - **ERC721 Compliance**: Inherits from ERC721, providing standard functionality for creating and managing non-fungible tokens (NFTs).
+  - **Tokenization of Receipts**: Creates a digital representation of receipts in the form of ERC721 tokens.
+    Tokens represent different types of transactions (e.g., transportation, food, accommodation).
+  - **Company Registration**: Allows registration of companies with specific details, such as name, location, and type.
+  - **Refunding Contract Registration**: Enables the registration of refunding contracts with specific details, including whether a contract is locked.
+  - **Transfer of Receipt Tokens**:  Supports the transfer of receipt tokens between addresses, including from companies to refunding contracts. Maintains a record of addresses that have owned the token at different points in history.
+  - **Locking/Unlocking Refunding Contracts**: Allows the contract owner to lock and unlock refunding contracts, controlling their ability to modify data. Enhances security and prevents unauthorized modifications during specific periods.
+  - **Event Logging**: Logs important events within the contract, ensuring transparency and traceability for auditing purposes. Events include the registration of companies, removal of companies, registration of refunding contracts, and removal of refunding contracts.
+
 
 
 
