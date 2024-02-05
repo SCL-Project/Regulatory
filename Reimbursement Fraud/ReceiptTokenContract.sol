@@ -9,7 +9,6 @@
 // ***************************************************************************************************************
 pragma solidity ^0.8.20;
 
-// to get the contract running on the Mumbai Testnet, it is essential to change the pragma solidities in all the needed files to 0.8.19.
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
