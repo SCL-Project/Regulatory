@@ -45,20 +45,16 @@ Finally, when the token has been accepted, the employee is being refunded. Addit
 
 ### [ReceiptTokenRefundingContract](Reimbursement%20Fraud/ReceiptTokenRefundingContract.sol)
 - **Purpose**:
-    The VATTokenContract for Switzerland is an ERC20 (ERC20Burnable and ERC20Permit) token contract, forming an essential part of the blockchain-based VAT system. It is specifically designed for handling VAT transactions in Switzerland, ensuring seamless and secure VAT processing. The VAT payment in this contract is the basis to be able to create a receipt token. The contract's primary role is to facilitate the issuance, transfer, and management of VAT tokens, representing VAT amounts in digital form. This contract serves as a digital ledger for VAT transactions, making VAT management more efficient and transparent, particularly for cross-border transactions. Therefore the contract streamlines VAT payments and refunds and fraud scenarios in complex tax calculation scenarios and input tax deduction can be prevented.
+This Solidity smart contract is named "ReceiptTokenRefunding" and serves as a mechanism for refunding expenses associated with specific NFTs representing receipts. It is designed to be used by a company or organization to manage and automate the refunding process for various types of expenses such as transportation, food, and accommodation.
 - **Features**:
   - **Ownership and Permissions**: Utilizes Ownable and custom modifiers to ensure that only authorized entities (Swiss tax authority) can perform critical operations.
-  - **Tokenization of VAT**: The contract creates a digital representation of VAT credit given by the government after a fiat transaction is made, allowing for seamless and transparent tracking of VAT payments and obligations.
-  - **ERC20 Compliance**: Adheres to the ERC20 standard, ensuring compatibility with a wide range of wallets and services in the Ethereum ecosystem.
-  - **Tax Payment and Refund Mechanism**: Facilitates VAT payments from businesses to the government and manages tax refunds, ensuring accurate, fast and transparent transactions with the use of the VAT rates of the Oracle.
-  - **Governmental Oversight**: Empowers government entities, such as tax authority, to mint, distribute, and manage VAT tokens, ensuring regulatory compliance.
-  - **Transfer Restrictions**: Implements rules to prevent unauthorized or non-compliant transfer of tokens, reinforcing the integrity of the VAT process.
-  - **Buy and Sell Functionality**: Enables businesses to buy VAT tokens against their token credit and sell them back to the government, facilitating liquidity in the VAT ecosystem.
-  - **Token Purchase and Redemption**: Allows companies to buy VAT tokens using their token credit and sell VAT tokens back to the government, enhancing liquidity and flexibility in VAT management.
-  - **Event Logging**: The VATTokenContract for Germany incorporates event logging as a crucial feature to provide transparency and traceability in its operations. This feature is essential for auditing, regulatory compliance, and maintaining the integrity of the VAT system.
-  - **Receipt Token Integration**: Integrates with the ReceiptTokenContract to access detailed transaction data of the ReceiptTokens for accurate VAT calculation and refund processing.
-  - **Cross-Border Considerations**: Works with the CrossBorderContract for managing VAT in cross-border transactions, addressing VAT complexities between Switzerland and Germany.
-  - **VATTokenContract Collaboration**: Works in conjunction with the VATTokenContract of Germany
+  - **Employee Management**: The contract provides functions to register, remove, and retrieve information about employees, including their name, surname, and employee ID.
+  - **Refunding Statistics**: Tracks and updates refunding statistics for each employee, including the total expenses, the number of successful refundings, and the number of failed refundings.
+  - **Expense Restrictions**: Allows the company to set and manage restrictions on expenses, such as maximum amounts allowed for each category and additional conditions for first-class travel, per-person food expenses, and per-night accommodation expenses.
+  - **Fee Calculation**: Automatically calculates and deducts fees (0.05% of the original expense) from the refund amount. These fees are distributed to the initial company and SCL.
+  - **Oracle Integration**: Utilizes an Ethereum to Swiss Franc exchange rate oracle (ExchangeRate_ETH_CHF) to calculate fees based on the current exchange rate.
+  - **Withdrawal of Funds**: Provides a function for the refunding company to withdraw funds from the contract.
+  - **Event Logging**: Emits events for successful and failed refund operations, as well as events for cases where an employee experiences five consecutive failed refund attempts.
 
 ### [ETHOracle](Reimbursement%20Fraud/ETHOracle.sol)
 - **Purpose**: The ETHOracle contract serves as a crucial component in the blockchain-based Reimbursement system providing the ETH/CHF exchange rate to other contracts. This exchange rate is needed when other contracts calculate a precentage of a price in CHF which they intend to pay on chain in ETH. The default rate is 1927.33 where it can be updates at any time. 
