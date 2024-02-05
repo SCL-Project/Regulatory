@@ -12,8 +12,7 @@ The customer/employee makes a normal transaction. E.g. the customer buys a train
 These represent the governmental tax entities for each country. They receive information from the ReceiptToken and VATToken contracts, which include transaction data relevant for tax collection, regulation and auditing. The tax authorities grant a token credit when they receive a fiat payment.
 
 ### Step 3
-This contract is the centerpiece of the smart contract solution. It keeps track of the regis-tered companies, and its central function is to create for every transaction a Receipt Token for the buyer as well as the seller. This system is particularly valuable for tracking and au-diting purposes for presenting the receipt to the tax authority and transporting the goods across the border in a transparent and legal manner. The tokens of the seller and buyer are linked, thus capturing the entire supply chain. The contract uses the oracle contract to cal-culate the VAT amounts payable according to the current VAT rates.
-
+The ReceiptToken is being sent to the Customer/Employee. This will be done automatically in the process of creating the ReceiptToken.
 ### Step 4
 The VATToken contracts are used to simplify the VAT payments and refunds using either the VAT_CH or the VAT_DE token to reduce the potential of fraud and streamline tax administration. The VAT payment in these contracts is also the basis to be able to create a Receipt Token in the ReceiptTokenContract. For accuracy in the calculation the contract accesses the VAT rates from the Oracle for refunds.
 
