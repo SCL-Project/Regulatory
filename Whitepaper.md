@@ -60,9 +60,10 @@ Finally, when the token has been accepted, the employee is being refunded. Addit
   - **VATTokenContract Collaboration**: Works in conjunction with the VATTokenContract of Germany
 
 ### [ETHOracle](Reimbursement%20Fraud/ETHOracle.sol)
-- **Purpose**: The ETHOracle contract serves as a crucial component in the blockchain-based Reimbursement system providing the ETH/CHF exchange rate to other contracts. This exchange rate is needed when other contracts calculate a precentage of a price in CHF which they intend to pay on chain in ETH.
+- **Purpose**: The ETHOracle contract serves as a crucial component in the blockchain-based Reimbursement system providing the ETH/CHF exchange rate to other contracts. This exchange rate is needed when other contracts calculate a precentage of a price in CHF which they intend to pay on chain in ETH. The default rate is 1927.33 where it can be updates at any time. 
 - **Features**:
   - **Ownership and Permissions**: Uses Ownable and custom modifiers, ensuring operations are conducted only by authorized entities
+  - **Exchange Rate Provision**: Manages and stores the exchange rate between CHF and ETH, vital for on chain transactions. This feature is critical for paying the fees in the Reimbursement system.
   - **Owner-Controlled Updates**: Designed to allow only the contract owner (a trusted third party) to update the exchange rate, maintaining the integrity and reliability of the data.
 
 ## Contributors
