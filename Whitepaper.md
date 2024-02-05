@@ -27,20 +27,12 @@ Finally, when the token has been accepted, the employee is being refunded. Addit
 ## Smart Contracts
 ### [ReceiptTokenContract](Reimbursement%20Fraud/ReceiptTokenContract.sol)
 - **Purpose**:
-    The ReceiptTokenContract is an ERC721 contract integral to our blockchain-based VAT system, designed to tokenize buying and selling transactions. It aims to ensure transparent and immutable transaction records, significantly reducing VAT fraud potential. This contract is crucial in digitizing receipts and VAT records, ensuring each transaction is accurately and securely documented on the blockchain, including details about goods or services. It is invaluable for tracking and auditing, providing a reliable and efficient means of managing VAT-related information. It allows owners to present receipts to tax authorities and transport goods across borders transparently and legally.
+    The ReceiptTokenContract is an ERC721 contract, designed to tokenize real world transactions. Each Token represents the receipt of such an transaction that can at some later point in time be sent to a refunding contract. Furthermore, each Token is unique and carries all the important data concerning the transaction such as e.g. the price or the date of the transaction.
 - **Features**:
-  - **Ownership and Permissions**: Utilizes Ownable and therefore only one central authority of Switzerland and Germany can perform critical operations.
-  - **Tokenization of Transactions**: Issues ERC721 tokens (NFTs) to represent individual transactions, ensuring a unique and tamper-proof record of each sale and purchase.
-  - **Seller and Buyer Tokens**: Differentiates between tokens issued to sellers and buyers, encapsulating the details of each party's involvement in the transaction.
-  - **Twin-Token ID**: The contract incorporates a unique twin-token ID mechanism to link the buyer and seller token.
-  - **Receipt and Company Structs**: Defines structured data for receipt tokens and registered companies, encompassing essential transaction and entity details.
-  - **VAT Calculation and Recording**: Calculates VAT based on transaction values and stores this information within each token, streamlining the tax recording process.
-  - **Enhanced Transparency in Supply Chains**: Tracks and records the usage of products to produce further processed goods in supply chains, contributing to greater transparency and accountability.
-  - **Secure Company Registration and Management**: Manages the registration of companies, ensuring that only authorized entities can create receipt tokens.
-  - **Cross-Border Functionality**: Coordinates with the CrossBorderContract for international transactions, handling different VAT rates and regulations.
-  - **VATToken Functionality**: Interacts with VATToken_DE and VATToken_CH for specific regional VAT handling, and integrates with an Oracle contract for dynamic VAT rate and currency information.
-  - **Used Product Tracking**: Records the percentage of used products in further processed goods, aiding in VAT refund claims and supply chain management and transparency.
-  - **Events for Token Creation and Chain End**: Emits events for new token creation and signaling the end of a supply chain, adding to the system's  traceability.
+  - **Ownership and Permissions**: Uses Ownable and custom modifiers, ensuring operations are conducted only by authorized entities
+  - **Refunding and Company Structs**: Defines structured data for refunding contracts and registered companies.
+
+
 
 ### [ReceiptTokenRefundingContract](Reimbursement%20Fraud/ReceiptTokenRefundingContract.sol)
 - **Purpose**:
