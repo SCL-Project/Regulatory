@@ -27,7 +27,7 @@ This contract plays a crucial role in managing cross-border transactions within 
 The need to change the VAT system arises from its inherent inefficiencies and susceptibility to fraud, as its all-phase taxation structure leads to complex calculations and creates opportunities for a range of fraudulent activities. Moreover, in Switzerland, common evasion methods like smuggling, undervaluation, and misuse of tax rates, as reported by the Bundesamt für Zoll und Grenzsicherheit (BAZG), highlight the persistent challenges in VAT administration, underscoring the urgency for systemic reform.
 
 ## Smart Contracts
-### [ReceiptTokenContract](VAT%20Fraud/ReceiptTokenContract.sol)
+### [ReceiptTokenContract](Reimbursement%20Fraud/ReceiptTokenContract.sol)
 - **Purpose**:
     The ReceiptTokenContract is an ERC721 contract integral to our blockchain-based VAT system, designed to tokenize buying and selling transactions. It aims to ensure transparent and immutable transaction records, significantly reducing VAT fraud potential. This contract is crucial in digitizing receipts and VAT records, ensuring each transaction is accurately and securely documented on the blockchain, including details about goods or services. It is invaluable for tracking and auditing, providing a reliable and efficient means of managing VAT-related information. It allows owners to present receipts to tax authorities and transport goods across borders transparently and legally.
 - **Features**:
@@ -44,7 +44,7 @@ The need to change the VAT system arises from its inherent inefficiencies and su
   - **Used Product Tracking**: Records the percentage of used products in further processed goods, aiding in VAT refund claims and supply chain management and transparency.
   - **Events for Token Creation and Chain End**: Emits events for new token creation and signaling the end of a supply chain, adding to the system's  traceability.
 
-### [VATTokenContract Switzerland](VAT%20Fraud/VATToken_CH.sol)
+### [ReceiptTokenRefundingContract](Reimbursement%20Fraud/ReceiptTokenRefundingContract.sol)
 - **Purpose**:
     The VATTokenContract for Switzerland is an ERC20 (ERC20Burnable and ERC20Permit) token contract, forming an essential part of the blockchain-based VAT system. It is specifically designed for handling VAT transactions in Switzerland, ensuring seamless and secure VAT processing. The VAT payment in this contract is the basis to be able to create a receipt token. The contract's primary role is to facilitate the issuance, transfer, and management of VAT tokens, representing VAT amounts in digital form. This contract serves as a digital ledger for VAT transactions, making VAT management more efficient and transparent, particularly for cross-border transactions. Therefore the contract streamlines VAT payments and refunds and fraud scenarios in complex tax calculation scenarios and input tax deduction can be prevented.
 - **Features**:
@@ -61,7 +61,7 @@ The need to change the VAT system arises from its inherent inefficiencies and su
   - **Cross-Border Considerations**: Works with the CrossBorderContract for managing VAT in cross-border transactions, addressing VAT complexities between Switzerland and Germany.
   - **VATTokenContract Collaboration**: Works in conjunction with the VATTokenContract of Germany
 
-### [VATTokenContract Germany](VAT%20Fraud/VATToken_DE.sol)
+### [ETHOracle](Reimbursement%20Fraud/ETHOracle.sol)
 - **Purpose**:
     The VATTokenContract for Germany, an ERC20 (ERC20Burnable and ERC20Permit) token contract, is a crucial part of the blockchain-based VAT system, tailored for VAT transactions in Germany. Its design ensures seamless VAT processing within the German context. It operates exactly the same as the VATTokenContract of Switzerland.
 - **Features**:
@@ -79,7 +79,7 @@ The need to change the VAT system arises from its inherent inefficiencies and su
   - **Cross-Border Considerations**: Works with the CrossBorderContract for managing VAT in cross-border transactions, addressing VAT complexities between Germany and Switzerland.
   - **VATTokenContract Collaboration**: Interacts with the VATTokenContract of Switzerland for cohesive VAT management across the two countries.
 
-### [CrossBorderContract](VAT%20Fraud/CrossBorderContract.sol)
+### [RCTContractInterface](Reimbursement%20Fraud/RCTContractInterface.sol)
 - **Purpose**:
     The CrossBorderContract plays a crucial role in managing cross-border transactions within the VAT system. It is designed to automate and streamline the VAT adjustments for products and services that cross borders. The primary goal is to simplify the complex tax implications of cross-border commerce, ensuring compliance with different VAT rates and regulations. This contract is essential for reducing administrative burdens, mitigating VAT fraud, and fostering a more transparent international trade environment.
 - **Features**:
@@ -92,17 +92,6 @@ The need to change the VAT system arises from its inherent inefficiencies and su
   - **Cross-Border Tax Settlements**: Adjusts VAT payments in accordance with the destination country's tax rate using the data of the Oracle, handling both tax credits and additional tax requirements.
   - **Event Logging for Cross-Border Movements**: Records details of items crossing borders, including origin, destination, and token ID, for transparency and tracking.
   - **Integration with VATToken and ReceiptTokenContract**: Works in conjunction with VATTokenContract for tax payments and ReceiptTokenContract for validating transaction details.
-
-### [Oracle ](VAT%20Fraud/Oracle.sol)
-- **Purpose**:
-    The Oracle contract serves as a crucial component in the blockchain-based VAT system, providing reliable and up-to-date financial data to other contracts. It functions as a trusted source for VAT rates and exchange rates. The primary role of this contract is to ensure that all VAT calculations and financial transactions within the system are based on accurate and current financial data, thereby ensuring compliance and consistency in VAT processing across different countries.
-- **Features**:
-  - **Ownership and Permissions**: Utilizes Ownable and therefore only one central authority of Switzerland and Germany can perform the setting of the rates in this contract.
-  - **VAT Rate Management**: Manages and stores the VAT rates for different countries, allowing for dynamic and accurate VAT calculations in cross-border transactions.
-  - **Currency Information Storage**: Keeps track of the official currencies used by different countries, ensuring that all financial transactions are processed in the correct currency.
-  - **Exchange Rate Provision**: Manages and stores the exchange rate between CHF and EUR, vital for transactions involving Switzerland and Germany. This feature is critical for accurately converting VAT amounts between different currencies.
-  - **Owner-Controlled Updates**: Designed to allow only the contract owner (a trusted third party) to update VAT rates, currencies, and exchange rates, maintaining the integrity and reliability of the data.
-  - **Data Deletion Functionality**: Provides the contract owner with the ability to delete outdated or incorrect VAT rates and currency information, ensuring the system's data remains current and accurate.
 
 ## Contributors
 - <a href="https://github.com/SamuelClauss" style="text-decoration: none; color: black;">Samuel Clauss</a>
