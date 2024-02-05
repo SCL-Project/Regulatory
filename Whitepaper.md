@@ -24,9 +24,6 @@ The refunding contract of the employer checks the ReceiptToken of the employee w
 ### Step 6   
 Finally, when the token has been accepted, the employee is being refunded. Additionally the initial company, the one that created the ReceiptToken and SCL as the solution provider are getting payed a small percentage of the ReceiptTokens price as a fee.
 
-## Background
-The need to change the VAT system arises from its inherent inefficiencies and susceptibility to fraud, as its all-phase taxation structure leads to complex calculations and creates opportunities for a range of fraudulent activities. Moreover, in Switzerland, common evasion methods like smuggling, undervaluation, and misuse of tax rates, as reported by the Bundesamt für Zoll und Grenzsicherheit (BAZG), highlight the persistent challenges in VAT administration, underscoring the urgency for systemic reform.
-
 ## Smart Contracts
 ### [ReceiptTokenContract](Reimbursement%20Fraud/ReceiptTokenContract.sol)
 - **Purpose**:
