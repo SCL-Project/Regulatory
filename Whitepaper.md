@@ -1,7 +1,7 @@
 # Mitigating Expense Reimbursement Fraud: A Smart Contract Approach leveraging NFTs as Receipts
 
 ## Description
-The Regulation Team is developing a prototype for a smart contract solution for a Receipt Reimbursement System between customers and companies. The objective of this prototype is to mitigate Reimbursement Fraud when employees hand in their receipts of business transactions to their employer. This is done by generation ReceiptTokens (ERC721) as Receipts that can afterwards only be handed in once to the employer. 
+The Regulation Team is developing a prototype for a smart contract solution for a Receipt Reimbursement System between customers and companies. The objective of this prototype is to mitigate Reimbursement Fraud when employees hand in their receipts of business transactions to their employer. This is done by generating ReceiptTokens (ERC721) as Receipts that can afterwards only be handed in once to the employer. 
 
 
 <img src="Reimbursement Fraud/Graphics/Prototype.png" width="1050"/> 
