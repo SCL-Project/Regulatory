@@ -1,8 +1,8 @@
 # Mitigating Expense Reimbursement Fraud: A Smart Contract Approach leveraging NFTs as Receipts
 
 ## Description
-The Tokenization Team is developing a prototype for a smart contract solution for the Value-Added-Tax (VAT) system in Switzerland and the border to Germany. The objective of this prototype is to prevent VAT fraud, enhance system efficiency, transparency and security, and thus aid the government in ensuring their compliance and to safeguard revenue.
-Similar to Ainsworth et al. (2016), the team proposed incorporating a VATToken (ERC20 Token) into their smart contracts solution for VAT payments. Moreover, a ReceiptToken (ERC721) can be generated after a successful VAT payment to the government, which provides an unfalsifiable proof of the transaction for both buyers and sellers of goods or services. In cross-border transactions, the CrossBorderContract is required to be able to transfer goods.
+The Regulation Team is developing a prototype for a smart contract solution for a Receipt Reimbursement System between customers and companies. The objective of this prototype is to mitigate Reimbursement Fraud when employees hand in their receipts of business transactions to their employer. This is done by generation ReceiptTokens (ERC721) as Receipts that can afterwards only be handed in once to the employer. 
+
 
 <img src="Reimbursement Fraud/Graphics/Prototype.png" width="1050"/> 
 
