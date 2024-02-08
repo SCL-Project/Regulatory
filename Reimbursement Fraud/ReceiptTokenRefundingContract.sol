@@ -322,6 +322,8 @@ contract ReceiptTokenRefunding is IERC721Receiver, Ownable {
     */
     function refundToken(uint256 _tokenId) external onlyEmployees {
         require(msg.sender == RCTContract.ownerOf(_tokenId), "You are not the owner of this NFT!");
+        // * 1000 because the Exchange rate is returned by the factor 1000 
+        // * 1000 because the minimum balance is 1000 CHF (in this case)
         uint256 x = uint256(1000 * 1000 * 10**18) % uint256(ETHOracle.getExchangeRate());
         uint256 requiredContractBalance = uint256(1000 * 1000 * 10**18 - x) / uint256(ETHOracle.getExchangeRate());
         if (address(this).balance < requiredContractBalance) {
