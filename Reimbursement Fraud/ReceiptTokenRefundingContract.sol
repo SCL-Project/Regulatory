@@ -40,11 +40,13 @@ contract ReceiptTokenRefunding is IERC721Receiver, Ownable {
     /**
     * @dev Event emitted when a refund operation succeeds.
     * @param _address, The address associated with the refund.
+    * @param employeeId, The ID of the employee that can be refunded
+    * @param _tokenId, The ID of the Token that can be refunded
     * @param price, The refunded price.
     * @param date, The date of the successful refund.
     * @param companyType, The type of company involved in the refund.
     */
-    event RefundSucceeded(address _address, uint40 price, uint32 date, string companyType);
+    event RefundSucceeded(address _address, uint32 employeeId, uint256 _tokenId, uint40 price, uint32 date, string companyType);
 
     /**
     * @dev Event emitted when a refund operation fails.
@@ -403,7 +405,7 @@ contract ReceiptTokenRefunding is IERC721Receiver, Ownable {
             employeeRefundings[msg.sender].currentExpenses += price;
             RCTContract.transferNFT(msg.sender, _tokenId);
             payFees(fees, initialCompany);
-            emit RefundSucceeded(msg.sender, price, date, "Accomodation");
+            emit RefundSucceeded(msg.sender, employees[msg.sender].employeeId, _tokenId, price, date, "Accomodation");
         } else {
             employeeRefundings[msg.sender].currentNumberOfFailedRefundings++;
             if (employeeRefundings[msg.sender].currentNumberOfFailedRefundings >= 5) {
